@@ -1,0 +1,14 @@
+<div class="space-y-4">
+    {% for genre in genres %}
+        <div class="flex items-center space-x-2">
+            <input 
+                type="checkbox" 
+                id="genre_{{ genre.id }}" 
+                name="genres" 
+                value="{{ genre.id }}" 
+                class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            >
+            <label for="genre_{{ genre.id }}" class="text-sm text-gray-700">{{ genre.name }}</label>
+        </div>
+    {% endfor %}
+</div>

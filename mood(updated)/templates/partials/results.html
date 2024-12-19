@@ -1,0 +1,15 @@
+{% if not videos %}
+    <p class="text-center text-gray-600 mt-4">No results found for your search.</p>
+{% else %}
+    <h2 class="text-xl font-semibold mt-6 text-center">Search Results</h2>
+    <ul class="space-y-4 mt-4">
+        {% for video in videos %}
+            <li class="flex items-center space-x-4">
+                <a href="{{ video['url'] }}" target="_blank" class="flex items-center space-x-2">
+                    <img src="{{ video['thumbnail'] }}" alt="Thumbnail" class="w-20 h-20 object-cover rounded-md">
+                    <p class="text-sm text-gray-700">{{ video['title'] }}</p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Setup</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    
+    <!-- Add Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h1 class="text-2xl font-bold mb-6 text-center">Complete Your Setup</h1>
+
+        <form method="POST" action="{{ url_for('setup') }}" class="space-y-4">
+            <!-- Genre Section -->
+            <h3 class="text-lg font-semibold">Select Genres</h3>
+            <div id="genre-section" hx-get="{{ url_for('fetch_genres') }}" hx-trigger="load">
+                <!-- Genres will load here -->
+            </div>
+
+            <!-- Artist Section -->
+            <h3 class="text-lg font-semibold">Select Artists</h3>
+            <div id="artist-section" hx-get="{{ url_for('fetch_artists') }}" hx-trigger="load">
+                <!-- Artists will load here -->
+            </div>
+
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                Save Preferences
+            </button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<div class="space-y-4">
+    {% for artist in artists %}
+        <div class="flex items-center space-x-2">
+            <input 
+                type="checkbox" 
+                id="artist_{{ artist.id }}" 
+                name="artists" 
+                value="{{ artist.id }}" 
+                class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            >
+            <label for="artist_{{ artist.id }}" class="text-sm text-gray-700">{{ artist.name }}</label>
+        </div>
+    {% endfor %}
+</div>
